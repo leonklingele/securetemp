@@ -8,3 +8,7 @@ go:
 
 script:
   - go test -v .
+
+os:
+  - linux
+  - osx
