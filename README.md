@@ -52,3 +52,7 @@ if _, err := tmpFile.WriteString("Hello, World!"); err != nil {
 // The directory is deleted and the RAM is freed again.
 cleanupFunc()
 ```
+
+## Idea
+
+This project was inspired by [pass](https://www.passwordstore.org/)
