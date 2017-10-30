@@ -37,7 +37,7 @@ func TempDir(size int) (string, func(), error) {
 
 // TempFile creates a new RAM disk with size 'size' (in bytes),
 // creates a temp file in it and returns a pointer to that file.
-// Use this function only if you intend to create a single
+// Use this function only if you intend to create a single file
 // inside your RAM disk, else prefer to use 'TempDir'.
 func TempFile(size int) (*os.File, func(), error) {
 	path, cleanupFunc, err := TempDir(size)
