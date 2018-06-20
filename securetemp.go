@@ -45,9 +45,18 @@ func TempFile(size int) (*os.File, func(), error) {
 	if err != nil {
 		return nil, nil, err
 	}
+	doCleanup := true
+	defer func() {
+		if doCleanup {
+			cleanupFunc()
+		}
+	}()
+
 	file, err := ioutil.TempFile(path, globalPrefix)
 	if err != nil {
 		return nil, nil, err
 	}
+
+	doCleanup = false
 	return file, func() { file.Close(); cleanupFunc() }, nil
 }
