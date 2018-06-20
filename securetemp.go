@@ -58,5 +58,5 @@ func TempFile(size int) (*os.File, func(), error) {
 	}
 
 	doCleanup = false
-	return file, func() { file.Close(); cleanupFunc() }, nil
+	return file, func() { _ = file.Close(); cleanupFunc() }, nil
 }

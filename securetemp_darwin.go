@@ -47,13 +47,13 @@ func createRAMDisk(size int) (string, func(), error) {
 
 func cleanupRAMDisk(devPath, mountPath string) {
 	if mountPath != "" {
-		exec.Command("umount", mountPath).Run()
+		_ = exec.Command("umount", mountPath).Run()
 		defer func() {
-			os.RemoveAll(mountPath)
+			_ = os.RemoveAll(mountPath)
 		}()
 	}
 	if devPath != "" {
-		exec.Command("diskutil", "quiet", "eject", devPath).Run()
+		_ = exec.Command("diskutil", "quiet", "eject", devPath).Run()
 	}
 }
 
