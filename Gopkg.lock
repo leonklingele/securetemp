@@ -5,7 +5,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "e42485b6e20ae7d2304ec72e535b103ed350cc02"
+  revision = "ad87a3a340fa7f3bed189293fbfa7a9b7e021ae1"
 
 [solve-meta]
   analyzer-name = "dep"
