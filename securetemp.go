@@ -5,12 +5,13 @@ import (
 	"os"
 )
 
+// TODO(leon): It's {K,M,G}iB, not {K,M,G}B (with an "i")
 const (
-	// SizeKB represents one Kilobyte
+	// SizeKB represents one Kibibyte
 	SizeKB = 1 << (10 * iota)
-	// SizeMB represents one Megabyte (1000 KB)
+	// SizeMB represents one Mebibyte (1024 KiB)
 	SizeMB
-	// SizeGB represents one Gigabyte (1000 MB)
+	// SizeGB represents one Gibibyte (1024 MiB)
 	SizeGB
 )
 
