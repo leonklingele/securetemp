@@ -10,6 +10,9 @@ This is useful if you temporarily need a file to store sensitive data in it.
 ```sh
 # Install library
 go get -u github.com/leonklingele/securetemp
+
+# Install library + CLI app
+go get -u github.com/leonklingele/securetemp/...
 ```
 
 ```go
