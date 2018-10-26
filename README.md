@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/leonklingele/securetemp.svg?branch=master)](https://travis-ci.org/leonklingele/securetemp)
 
-This library can be used to create temporary directories and files inside RAM.
-This is useful if you temporarily need a file to store sensitive data in it.
+This CLI app and library can be used to create temporary directories and files inside RAM.
+This is useful if you temporarily need a file to store sensitive data in.
 
 ## tl;dr
 
