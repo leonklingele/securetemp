@@ -11,8 +11,9 @@ This is useful if you temporarily need a file to store sensitive data in it.
 # Install library
 go get -u github.com/leonklingele/securetemp
 
-# Install library + CLI app
+# Install library + CLI app ("securetemp")
 go get -u github.com/leonklingele/securetemp/...
+securetemp -h
 ```
 
 ```go
