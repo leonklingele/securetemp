@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func createRAMDisk(size int) (string, func(), error) {
+func createRAMDisk(size int) (string, CleanupFunc, error) {
 	var (
 		mountPath, devPath string
 		err                error

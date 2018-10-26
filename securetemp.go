@@ -24,11 +24,13 @@ const (
 	globalPrefix = "securetemp"
 )
 
+type CleanupFunc func()
+
 // TempDir creates a new RAM disk with size 'size' (in bytes)
 // and returns the path to it.
 // Use this function only if you intend to create multiple
 // files inside your RAM disk, else prefer to use 'TempFile'.
-func TempDir(size int) (string, func(), error) {
+func TempDir(size int) (string, CleanupFunc, error) {
 	path, cleanupFunc, err := createRAMDisk(size)
 	if err != nil {
 		return "", nil, err
@@ -40,7 +42,7 @@ func TempDir(size int) (string, func(), error) {
 // creates a temp file in it and returns a pointer to that file.
 // Use this function only if you intend to create a single file
 // inside your RAM disk, else prefer to use 'TempDir'.
-func TempFile(size int) (*os.File, func(), error) {
+func TempFile(size int) (*os.File, CleanupFunc, error) {
 	path, cleanupFunc, err := TempDir(size)
 	if err != nil {
 		return nil, nil, err

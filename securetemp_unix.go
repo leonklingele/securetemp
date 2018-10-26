@@ -18,7 +18,7 @@ const (
 	devShmPath = "/dev/shm"
 )
 
-func createRAMDisk(size int) (string, func(), error) {
+func createRAMDisk(size int) (string, CleanupFunc, error) {
 	var (
 		mountPath string
 		err       error
