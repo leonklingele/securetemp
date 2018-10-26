@@ -25,16 +25,16 @@ func TestTempDir(t *testing.T) {
 }
 
 func TestTempFile(t *testing.T) {
-	tmpFile, cleanupFunc, err := TempDir(size)
+	tmpFile, cleanupFunc, err := TempFile(size)
 	if err != nil {
 		t.Fatal("failed to create temp file", err)
 	}
-	if _, err := os.Stat(tmpFile); err != nil {
+	if _, err := tmpFile.Stat(); err != nil {
 		t.Fatal("something is wrong with the temp file", err)
 	}
 
 	cleanupFunc()
-	if _, err := os.Stat(tmpFile); err == nil {
+	if _, err := tmpFile.Stat(); err == nil {
 		t.Fatal("temp dir should no longer exist after cleanup, but does", tmpFile)
 	}
 }
