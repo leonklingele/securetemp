@@ -72,7 +72,7 @@ func createAndMount(mountPath string, size int) error {
 
 	cmd := exec.Command(path,
 		"-o", "noatime",
-		fmt.Sprintf("-s %d", size*1024*2),
+		fmt.Sprintf("-s %d", size*2),
 		"/dev/wd0b",
 		mountPath)
 	var stderr bytes.Buffer

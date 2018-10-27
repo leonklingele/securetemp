@@ -67,7 +67,7 @@ func createDev(size int) (string, error) {
 		"-drivekey",
 		"system-image=yes",
 		"-nomount",
-		fmt.Sprintf("ram://%d", size*1024*2))
+		fmt.Sprintf("ram://%d", size*2))
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
