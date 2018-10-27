@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"golang.leonklingele.de/securetemp"
+	"github.com/leonklingele/securetemp"
 )
 
 func run(size int, createDir bool, quiet bool) error {
