@@ -31,11 +31,7 @@ type CleanupFunc func()
 // Use this function only if you intend to create multiple
 // files inside your RAM disk, else prefer to use 'TempFile'.
 func TempDir(size int) (string, CleanupFunc, error) {
-	path, cleanupFunc, err := createRAMDisk(size)
-	if err != nil {
-		return "", nil, err
-	}
-	return path, cleanupFunc, nil
+	return createRAMDisk(size)
 }
 
 // TempFile creates a new RAM disk with size 'size' (in bytes),
