@@ -47,13 +47,16 @@ if err != nil {
 	// TODO: Properly handle error
 	log.Fatal(err)
 }
+defer file.Close()
 // Do something with `file`
-if _, err := tmpFile.WriteString("Hello, World!"); err != nil {
+if _, err := file.WriteString("Hello, World!"); err != nil {
 	// TODO: Properly handle error
 	log.Fatal(err)
 }
+file.Close()
 // Call the cleanup func as soon as you no longer need the directory.
 // The directory is deleted and the RAM is freed again.
+// Make sure to close every file inside `tmpDir` before.
 cleanupFunc()
 ```
 
