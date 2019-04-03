@@ -38,7 +38,7 @@ func run(size int, createDir bool, quiet bool) error {
 	}
 
 	println("The RAM disk will be cleaned up once this process terminates.")
-	sigs := make(chan os.Signal)
+	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	<-sigs
 	printf("Cleaning up..")
