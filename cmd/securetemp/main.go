@@ -28,21 +28,21 @@ func run(size int, createDir bool, quiet bool) error {
 		fmt.Println(tmpFile.Name())
 	}
 
-	printf := func(msg string) {
+	print := func(msg string) {
 		if !quiet {
-			fmt.Printf(msg)
+			fmt.Print(msg)
 		}
 	}
 	println := func(msg string) {
-		printf(msg + "\n")
+		print(msg + "\n")
 	}
 
 	println("The RAM disk will be cleaned up once this process terminates.")
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	<-sigs
-	printf("Cleaning up..")
-	defer printf(" done.\n")
+	print("Cleaning up..")
+	defer print(" done.\n")
 	cleanupFunc()
 	return nil
 }
