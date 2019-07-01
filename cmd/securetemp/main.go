@@ -48,7 +48,7 @@ func run(size int, createDir bool, quiet bool) error {
 }
 
 func main() {
-	size := flag.Int("size", securetemp.DefaultSize, "specifies the maximum RAM disk size in byte")
+	size := flag.Int("size", securetemp.DefaultSize, "specifies the maximum RAM disk size in kilobyte")
 	createDir := flag.Bool("d", false, "create a directory, not a file")
 	quiet := flag.Bool("q", false, "do not output status messages")
 	showHelp := flag.Bool("help", false, "show help and exit")
